@@ -40,6 +40,20 @@ const App = () => {
         <Loading />
       </main>
     );
+
+  if (tours.length === 0)
+    return (
+      <div className="title">
+        <h2>No tours left</h2>
+        <button
+          className="btn"
+          style={{ marginTop: '2rem' }}
+          onClick={fetchTours}
+        >
+          Re-fetch
+        </button>
+      </div>
+    );
   return (
     <main>
       <Tours tours={tours} removeTour={removeTour} />
